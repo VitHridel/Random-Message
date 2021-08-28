@@ -38,9 +38,16 @@ let games = ['Sekiro: Shadows Die Twice', 'Nioh 2', 'Red Dead Redemption II', 'C
 function todayDo() {
     console.log('Today...');
     console.log(`You should at least: ${routines[randomNum(routines.length)]}`);
-    //console.log(yzomandias.name + yzomandias.albums)
-    console.log(`Watch: ${shows[randomNum(shows.length)]}`);
-    console.log(`Play: ${games[randomNum(games.length)]}`);
+    let interpret = music[randomNum(music.length)];
+    console.log('Music for today: ' + interpret.name + ' - ' + interpret.albums[randomNum(interpret.albums.length)]);
+    let show = shows[randomNum(shows.length)];
+    if(show == twitch) {
+        console.log('Watch: ' + twitch.name + '/' + twitch.streamers[randomNum(twitch.streamers.length)]);
+    } else {
+    console.log(`Watch: ${show}`);
+    };
+
+    console.log(`Game of the day: ${games[randomNum(games.length)]}`);
 };
 
 todayDo();
